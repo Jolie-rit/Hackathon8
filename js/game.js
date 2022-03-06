@@ -26,6 +26,10 @@ const maxZ = 0.2 * wall_width;
 const maxX = 0.2 * document.querySelector(".wall").offsetWidth;
 const minX = -1 * 0.5 * document.querySelector(".wall").offsetWidth;
 
+// Chat messages
+const messages = ["Hey! How's it going?", "Did you do the homework?", "Can you send me your notes?", "Do you know how to solve the 3rd question?", "Ready for the exam?"];
+var msgIndex = 0;
+
 // Position variables
 var z = 0;
 var x = 0;
@@ -48,6 +52,8 @@ document.body.addEventListener('keyup', jump);
 document.body.addEventListener('keyup', board_vid_toggle);
 teacher.addEventListener('mouseup', notes_toggle);
 student1.addEventListener('click', message_toggle);
+
+updateMessage(); // Updating Message text
 
 //Movement and looking around
 
@@ -216,5 +222,14 @@ function message_toggle(e) {
     }
     else {
         message.style.display = "none";
-    }  
+        updateMessage();
+    }
+}
+
+function updateMessage() {
+    document.querySelector(".from-them").innerHTML = messages[msgIndex++];
+
+    if (msgIndex == messages.length) {
+        msgIndex = 0;
+    }
 }
