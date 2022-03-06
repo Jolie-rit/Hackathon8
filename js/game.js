@@ -5,6 +5,7 @@ document.querySelector(".container_outer").style.perspective = wall_width / 2 + 
 document.querySelector(".container").style.transformOrigin = "50% 50% " + wall_width / 2 + "px";
 document.querySelector(".teacher").style.transform = "translateZ(" + wall_width / 4 + "px)";
 document.querySelector(".teacher_desk").style.transform = "translateZ(" + wall_width / 7 + "px)";
+document.querySelector(".student1").style.transform = "translateZ(" + wall_width / 2 + "px) rotateY(90deg)";
 
 const notes_obj = document.querySelector(".notes");
 const board_vid = document.querySelector(".board_vid");
