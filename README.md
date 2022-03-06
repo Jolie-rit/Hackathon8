@@ -1,3 +1,9 @@
 # Hackathon8
 Hackathon8
-controls are wasd to move, arrow keys to look around, and space to jump
+
+# Controls
+## W A S D to move
+## Arrow keys to look around
+## Space bar to jump
+## Right-click on teacher to toggle notes
+## Click on other student for chat messages
