@@ -8,6 +8,7 @@ document.querySelector(".teacher_desk").style.transform = "translateZ(" + wall_w
 
 const notes_obj = document.querySelector(".notes");
 const board_vid = document.querySelector(".board_vid");
+const teacher = document.querySelector(".teacher");
 
 notes_obj.style.display = "none";
 board_vid.style.display = "none";
@@ -39,8 +40,8 @@ var rotateTeacher;
 
 document.body.addEventListener('keydown', move);
 document.body.addEventListener('keyup', jump);
-document.body.addEventListener('keyup', notes_toggle);
 document.body.addEventListener('keyup', board_vid_toggle);
+teacher.addEventListener('mouseup', notes_toggle);
 
 //Movement and looking around
 
@@ -172,13 +173,21 @@ function jump(e) {
 }
 
 function notes_toggle(e){
-    //j
-    if(e.keyCode==74 || e.keyCode==106){
-        if (notes_obj.style.display == "none") {
-            notes_obj.style.display = "block";
-        }
-        else {
-            notes_obj.style.display = "none";
+    if (typeof e === 'object') {
+        // right click
+        if (e.button == 2) {
+            if (notes_obj.style.display == "none") {
+                notes_obj.style.display = "block";
+                document.body.removeEventListener('keydown', move);
+                document.body.removeEventListener('keyup', jump);
+                document.body.removeEventListener('keyup', board_vid_toggle);
+            }
+            else {
+                notes_obj.style.display = "none";
+                document.body.addEventListener('keydown', move);
+                document.body.addEventListener('keyup', jump);
+                document.body.addEventListener('keyup', board_vid_toggle);
+            }
         }
     }
 }
