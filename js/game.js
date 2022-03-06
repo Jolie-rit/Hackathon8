@@ -6,13 +6,17 @@ document.querySelector(".container").style.transformOrigin = "50% 50% " + wall_w
 document.querySelector(".teacher").style.transform = "translateZ(" + wall_width / 4 + "px)";
 document.querySelector(".teacher_desk").style.transform = "translateZ(" + wall_width / 7 + "px)";
 document.querySelector(".student1").style.transform = "translateZ(" + wall_width / 2 + "px) rotateY(90deg)";
+document.querySelector(".imessage").style.transform = "translateZ(" + wall_width / 1.45 + "px) rotateY(-90deg)";
 
 const notes_obj = document.querySelector(".notes");
 const board_vid = document.querySelector(".board_vid");
 const teacher = document.querySelector(".teacher");
+const student1 = document.querySelector(".student1");
+const message = document.querySelector(".imessage");
 
 notes_obj.style.display = "none";
 board_vid.style.display = "none";
+message.style.display = "none";
 
 //Movement
 
@@ -43,6 +47,7 @@ document.body.addEventListener('keydown', move);
 document.body.addEventListener('keyup', jump);
 document.body.addEventListener('keyup', board_vid_toggle);
 teacher.addEventListener('mouseup', notes_toggle);
+student1.addEventListener('click', message_toggle);
 
 //Movement and looking around
 
@@ -203,4 +208,13 @@ function board_vid_toggle(e) {
             board_vid.style.display = "none";
         }
     }
+}
+
+function message_toggle(e) {
+    if (message.style.display == "none") {
+        message.style.display = "block";
+    }
+    else {
+        message.style.display = "none";
+    }  
 }
