@@ -1,0 +1,42 @@
+.object {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+.teacher {
+    width: 18%;
+    bottom: 19.6%;
+    left: 65%;
+}
+
+.board {
+    width: 50%;
+    margin-top: -50%;
+    left: 25%;
+    z-index: 5;
+}
+
+.board_vid {
+    width: 34.5%;
+    margin-top: -48.7%;
+    left: 30%;
+    z-index: 6;
+    display: none;
+}
+
+.teacher_desk {
+    width: 45%;
+    right: 25%;
+    bottom: 20%;
+    z-index: 8;
+}
+
+.notes{
+    width: 30%;
+    position:fixed;
+    bottom:0%;
+    right:0%;
+    display: none;
+}
